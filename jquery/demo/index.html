@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>A l'affiche</title>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default%2Ces6%2Chtml5shiv"></script>
+    <script src="./js/vendor/modernizr-3.11.2.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/boutons.css" />
+  </head>
+
+  <body>
+    <div id="content" class="container container-fluid h-100">
+      <div class="row">
+        <div id="affiche1" class="col col-4 p-3 h3">A l'affiche</div>
+        <div id="affiche2" class="col col-4 p-3 h5 text-uppercase">Salle 1</div>
+        <div id="affiche3" class="col col-4 p-3 h5 text-uppercase">Salle 2</div>
+      </div>
+      <div class="row">
+        <div id="affiche1" class="col col-4">
+          <img src="img/ugc.png" class="img-thumbnail">
+        </div>
+        <div id="affiche4" class="col col-4">
+          <img src="img/ironman.jpg" class="img-responsive">
+        </div>
+        <div id="affiche5" class="col col-4">
+          <img src="img/captainamerica.jpg" class="img-responsive">
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col col-4 p-3">
+          <button data-id="affiche1" class="btn btn-info">
+            Tout voir
+          </button>
+        </div>
+        <div class="col col-4 p-3">
+          <button data-id="affiche4" class="btn btn-info">
+            Iron Man
+          </button>
+        </div>
+        <div class="col col-4 p-3">
+          <button data-id="affiche5" class="btn btn-info">
+            Captain America
+          </button>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div id="affiche1" class="col col-4 p-3"></div>
+        <div id="affiche4" class="col col-4 p-3 h5 text-uppercase">Salle 3</div>
+        <div id="affiche5" class="col col-4 p-3 h5 text-uppercase">Salle 4</div>
+      </div>
+      <div class="row h-50">
+        <div id="affiche1" class="col col-4">
+        </div>
+        <div id="affiche2" class="col col-4">
+          <img src="img/hulk.jpg" class="img-responsive">
+        </div>
+        <div id="affiche3" class="col col-4">
+          <img src="img/blackpanther.jpg" class="img-responsive">
+        </div>
+      </div>
+      <div class="row h-25 text-center">
+        <div class="col col-4 p-3">
+        </div>
+        <div class="col col-4 p-3">
+          <button data-id="affiche2" class="btn btn-success">
+            Hulk
+          </button>
+        </div>
+        <div class="col col-4 p-3">
+          <button data-id="affiche3" class="btn btn-warning">
+            Black Panther
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
