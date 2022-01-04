@@ -25,7 +25,6 @@ function getRandomColor() {
 
 function setBackgroundColor() {
   $(this).css('background-color', getRandomColor());
-  $('#login-state').attr('src', 'images/loggedin.png');
 }
 
 function triggerMaCouleurChange() {
