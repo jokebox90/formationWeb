@@ -1,49 +1,29 @@
-let tableauDesCouleurs = [
-  '#2C3E50', // sombre
-  '#ECF0F1', // clair
-  '#7F8C8D', // gris
-  '#8E44AD', // violet
-  '#2980B9', // bleu
-  '#27AE60', // vert
-  '#F1C40F', // jaune
-  '#E67E22', // orange
-  '#C0392B', // rouge
-]
-
-function nombreAleatoire(nombreDeFin) {
-  return Math.floor(Math.random() * nombreDeFin);
+function AnimationRouge (){
+  $("#div3").animate({left: '500px'}, 3000)
+  $("#div3").animate({top: '500px'}, 3000)
+  $("#div3").animate({left: '50px'}, 3000)
+  $("#div3").animate({top: '50px'}, 3000)
 }
 
-function couleurAleatoire() {
-  let longueurDuTableau = tableauDesCouleurs.length;
-  let numeroDeCouleur = nombreAleatoire(longueurDuTableau);
-  return tableauDesCouleurs[numeroDeCouleur];
+function AnimationBleu (){
+  $("#div4").animate({left: '50px'}, 3000)
+  $("#div4").animate({top: '50px'}, 3000)
+  $("#div4").animate({left: '500px'}, 3000)
+  $("#div4").animate({top: '500px'}, 3000)
 }
 
-function changeArrierePlan() {
-  $(this).css('background-color', couleurAleatoire());
-}
+$("body").on('animationRougeEvent', AnimationRouge)
+$("body").on('animationBleuEvent', AnimationBleu)
 
-function changementInfini() {
-  // La fonction déclenche l'événement
-  // et les fonctions qu'on a attaché
-  $('.mot').trigger('changeArrierePlanEvent');
+$(document).ready(function(){
 
-  // La fonction se rappelle elle-même toutes les 500ms
-  setTimeout(changementInfini, 500);
-}
+  $("#btn1").click(function() {
+    $(this).trigger('animationRougeEvent')
+    $(this).trigger('animationBleuEvent')
+  })
 
-$(document).ready(changementInfini);
-
-$(document).ready(function() {
-  $('.mot').click(function() {
-    $(this).next().toggleClass('cache');
-  });
-
-  // Enregistre l'événement pour qu'il
-  // puisse être déclenché plus tard.
-  //
-  // changeArrierePlan va recevoir
-  // this qui correspond à $('.mot')
-  $('.mot').on('changeArrierePlanEvent', changeArrierePlan);
-});
+  $("#btn2").click(function(){
+    $("#div3").stop(true,true)
+    $("#div4").stop(true,true)
+  })
+})
