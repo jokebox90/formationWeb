@@ -4,8 +4,8 @@ function executeClick(question, reponse) {
 }
 
 function enregistreClick(question, reponse) {
-  $(question).click(executeClick, question, reponse)
-  $(reponse).click(executeClick, question, reponse)
+  $(question).click(function() { executeClick(question, reponse) });
+  $(reponse).click(function() { executeClick(question, reponse) });
 }
 
 $(document).ready(function(){
