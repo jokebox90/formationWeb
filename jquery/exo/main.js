@@ -1,8 +1,11 @@
+function executeClick() {
+  $(question).children().toggleClass('collapse');
+  $(reponse).fadeToggle();
+}
+
 function enregistreClick(question, reponse) {
-  $(question).click(function() {
-    $(question).children().toggleClass('collapse');
-    $(reponse).fadeToggle();
-  })
+  $(question).click(executeClick)
+  $(reponse).click(executeClick)
 }
 
 $(document).ready(function(){
