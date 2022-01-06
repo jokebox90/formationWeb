@@ -23,43 +23,21 @@ function getRandomColor() {
   return flatUiColors[colorIndex];
 }
 
-function setBackgroundColor() {
-  $(this).css('background-color', getRandomColor());
-}
+function setBackgroundColor(event) {
+  $(event.target).css('background-color', getRandomColor());
 
-function triggerMaCouleurChange() {
-  $(this).trigger('maCouleurChange');
+  let overlay = $('div');
+  overlay.toggleClass('overlay');
+  $(event.target).append(overlay);
 }
 
 $(document).ready(function(){
   const cols = $(".col");
-  const colsImage = $(".col img");
 
   // Défini l'événement qui permet de changer la couleur
-  cols.on('maCouleurChange', setBackgroundColor);
+  $(document).on('maCouleurChangeEvent', setBackgroundColor);
 
-  colsImage.mouseenter('maCouleurChange', function() {
-    $(this).parent().trigger('maCouleurChange')
-  });
-
-  colsImage.mouseleave('maCouleurChange', function() {
-    $(this).parent().trigger('maCouleurChange')
-  });
-  // Change un première fois les couleurs au chargement de la page
-  cols.each(triggerMaCouleurChange);
-
-  // Déclenche l'événement grâce à des actions de la souris
-  cols.mouseenter(triggerMaCouleurChange);
-  cols.mouseleave(triggerMaCouleurChange);
-
-  cols.mouseenter('maCouleurChange', function() {
-    $(this).parent().children().trigger('maCouleurChange')
-  });
-
-  cols.mouseleave('maCouleurChange', function() {
-    $(this).parent().children().trigger('maCouleurChange')
-  });
-
-  // Déclenche l'événement grâce à des actions de la souris
-  $('body').keydown(triggerMaCouleurChange);
+  setInterval(function() {
+    cols.trigger('maCouleurChangeEvent')
+  }, 4500);
 });
